@@ -20,7 +20,7 @@ public:
     void sitDown();
 
 signals:
-    void setDownSignal(int pos);
+    void sitDownSignal(int pos);
 
 private:
     Q_DECLARE_PRIVATE(Dog)

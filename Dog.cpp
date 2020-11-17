@@ -32,7 +32,7 @@ void DogPrivate::_q_sitDownMethod(int pos)
 Dog::Dog(QObject *parent) :
         Animal(*(new DogPrivate(this)), parent)
 {
-    connect(this, SIGNAL(void sitDownSignal(int pos)), SLOT(void _q_sitDownMethod(int pos)));
+    connect(this, SIGNAL(sitDownSignal(int)), SLOT(_q_sitDownMethod(int)));
 }
 
 Dog::~Dog()
@@ -42,8 +42,9 @@ Dog::~Dog()
 
 void Dog::sitDown()
 {
-    emit setDownSignal(1);
+    emit sitDownSignal(1);
 }
+
 }
 
 #include "moc_Dog.cpp"
